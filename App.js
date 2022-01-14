@@ -21,20 +21,12 @@ import AccountScreen from './app/screens/AccountScreen';
 import ListingsScreen from './app/screens/ListingsScreen';
 import AppTextInputs from './app/Components/AppTextInputs';
 import AppPicker from './app/Components/AppPicker';
+import LoginScreen from './app/screens/LoginScreen';
+import ListingEditScreen from './app/screens/ListingEditScreen';
 
-
-const categories= [
-  {label: "Furniture", value:1 },
-  {label: "Clothing", value:2 },
-  {label: "Cameras", value:3 },
-]
 export default function App() {
-  return (
-    <Screen>
-      <AppPicker items={categories} icon="apps" placeholder="Category" />
-      <AppTextInputs  icon="email" placeholder="Email" />
-    </Screen>
-  );
+  return <ListingEditScreen />
+
 }
 
 
