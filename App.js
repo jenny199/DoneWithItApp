@@ -20,13 +20,19 @@ import ListItem from './app/Components/ListItem';
 import AccountScreen from './app/screens/AccountScreen';
 import ListingsScreen from './app/screens/ListingsScreen';
 import AppTextInputs from './app/Components/AppTextInputs';
+import AppPicker from './app/Components/AppPicker';
 
 
-
+const categories= [
+  {label: "Furniture", value:1 },
+  {label: "Clothing", value:2 },
+  {label: "Cameras", value:3 },
+]
 export default function App() {
   return (
     <Screen>
-      <AppTextInputs placeholder="Username" icon="email" />
+      <AppPicker items={categories} icon="apps" placeholder="Category" />
+      <AppTextInputs  icon="email" placeholder="Email" />
     </Screen>
   );
 }
