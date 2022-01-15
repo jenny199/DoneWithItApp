@@ -2,10 +2,10 @@ import React from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 
 import Screen from '../Components/Screen';
-import ListItem from '../Components/ListItem';
-import ListItemSeparator from '../Components/ListItemSeparator';
+import { ListItem, ListItemSeparator } from "../Components/lists";
 import colors from '../config/colors';
 import Icon from '../Components/Icon';
+import routes from "../navigation/routes";
 
 const menuItems =[
     {
@@ -20,45 +20,46 @@ const menuItems =[
         icon: {
           name: "email",
           backgroundColor: colors.secondary,  
-        }
+        },
+        targetScreen: routes.MESSAGES,
     }
 ]
-function AccountScreen(props) {
+function AccountScreen({ navigation }) {
     return (
-        <Screen style={styles.screen}>
-            <View style={styles.container}>
-                <ListItem 
-                    title="Mosh Hame"
-                    subTitle="Programmingwithme@gmail.com"
-                    image={require("../assets/mosh.jpg")}
-                />
-            </View>
-            <View style={styles.container}>
-                <FlatList 
-                    data={menuItems}
-                    keyExtractor={(menuItem) => menuItem.title}
-                    ItemSeparatorComponent={ListItemSeparator}
-                    renderItem={({ item }) => (
-                        <ListItem
-                            title={item.title}
-                            IconComponent={
-                                <Icon 
-                                    name={item.icon.name}
-                                    backgroundColor={item.icon.backgroundColor}
-                                />
-                            }
-                        />
-                    )}
-                />
-            </View>
-            <ListItem 
-                title="Log Out"
+      <Screen style={styles.screen}>
+        <View style={styles.container}>
+          <ListItem
+            title="Mosh Hamedani"
+            subTitle="programmingwithmosh@gmail.com"
+            image={require("../assets/mosh.jpg")}
+          />
+        </View>
+        <View style={styles.container}>
+          <FlatList
+            data={menuItems}
+            keyExtractor={(menuItem) => menuItem.title}
+            ItemSeparatorComponent={ListItemSeparator}
+            renderItem={({ item }) => (
+              <ListItem
+                title={item.title}
                 IconComponent={
-                    <Icon name="logout" backgroundColor= "#ffe66d"/>
-                }/>
-        </Screen>
+                  <Icon
+                    name={item.icon.name}
+                    backgroundColor={item.icon.backgroundColor}
+                  />
+                }
+                onPress={() => navigation.navigate(item.targetScreen)}
+              />
+            )}
+          />
+        </View>
+        <ListItem
+          title="Log Out"
+          IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
+        />
+      </Screen>
     );
-}
+  }
 
 const styles = StyleSheet.create({
     container:{
