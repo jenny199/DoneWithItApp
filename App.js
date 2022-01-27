@@ -22,11 +22,11 @@ import React from 'react';
 // import AppTextInputs from './app/Components/AppTextInputs';
 // import AppPicker from './app/Components/AppPicker';
 // import LoginScreen from './app/screens/LoginScreen';
-// import ListingEditScreen from './app/screens/ListingEditScreen';
-import RegisterScreen from './app/screens/RegisterScreen';
+import ListingEditScreen from './app/screens/ListingEditScreen';
+// import RegisterScreen from './app/screens/RegisterScreen';
 
 export default function App() {
-  return <RegisterScreen />
+  return <ListingEditScreen />
 
 }
 
