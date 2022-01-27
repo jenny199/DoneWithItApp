@@ -22,11 +22,18 @@ import React from 'react';
 // import AppTextInputs from './app/Components/AppTextInputs';
 // import AppPicker from './app/Components/AppPicker';
 // import LoginScreen from './app/screens/LoginScreen';
-import ListingEditScreen from './app/screens/ListingEditScreen';
+// import ListingEditScreen from './app/screens/ListingEditScreen';
 // import RegisterScreen from './app/screens/RegisterScreen';
-
+import { NavigationContainer } from '@react-navigation/native';
+// import AuthNavigator from './app/navigation/AuthNavigator';
+import navigationTheme from './app/navigation/navigationTheme';
+import AppNavigator from './app/navigation/AppNavigator';
 export default function App() {
-  return <ListingEditScreen />
+  return (
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
+    </NavigationContainer>
+  )
 
 }
 

@@ -1,24 +1,29 @@
 import React, {useState} from 'react';
 import { FlatList, View} from 'react-native';
 
-import ListItem from '../Components/ListItem';
 import Screen from '../Components/Screen';
-import ListItemSeparator from '../Components/ListItemSeparator';
-import ListItemDeleteActions from '../Components/ListItemDeleteActions';
-const initialMessages = [
+import {
+    ListItem,
+    ListItemDeleteActions,
+    ListItemSeparator,
+  } from "../Components/lists";
+
+  const initialMessages = [
     {
-        id: 1,
-        title: 'T1',
-        description: 'D1',
-        image: require('../assets/mosh.jpg')
+      id: 1,
+      title: "Mosh Hamedani",
+      description: "Hey! Is this item still available?",
+      image: require("../assets/mosh.jpg"),
     },
     {
-        id: 2,
-        title: 'T2',
-        description: 'D2',
-        image: require('../assets/mosh.jpg')
+      id: 2,
+      title: "Mosh Hamedani",
+      description:
+        "I'm interested in this item. When will you be able to post it?",
+      image: require("../assets/mosh.jpg"),
     },
-]
+  ];
+
 function MessagesScreen(props) {
     const [messages, setMessages] = useState(initialMessages);
     const [refreshing, setRefreshing] = useState(false);
